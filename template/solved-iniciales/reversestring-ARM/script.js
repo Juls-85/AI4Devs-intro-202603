@@ -1,13 +1,17 @@
-function invertirTexto() {
-    // 1. Capturamos el valor del input
-    const input = document.getElementById('userInput').value;
-    
-    // 2. Lógica de inversión:
-    // .split('') separa el texto en letras: "Hola" -> ["H", "o", "l", "a"]
-    // .reverse() invierte el array: ["a", "l", "o", "H"]
-    // .join('') une las letras de nuevo: "aloH"
-    const textoInvertido = input.split('').reverse().join('');
-    
-    // 3. Mostramos el resultado en el HTML
-    document.getElementById('result').innerText = textoInvertido;
+function procesarTexto() {
+    const input = document.getElementById('userInput');
+    const valor = input.value;
+    const resultElement = document.getElementById('result');
+    const boton = document.getElementById('btnInvertir');
+
+    // 1. Invertir la cadena en tiempo real
+    const textoInvertido = valor.split('').reverse().join('');
+    resultElement.textContent = textoInvertido;
+
+    // 2. Lógica del botón (aparece si el texto es mayor a 3 caracteres)
+    if (valor.length > 3) {
+        boton.style.display = "block";
+    } else {
+        boton.style.display = "none";
+    }
 }
