@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reverse String</title> 
+    <title>Reverse String Real-Time</title>
     <style>
         body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; margin-top: 50px; }
         input, button { padding: 10px; margin: 5px; }
+        #btnInvertir { display: none; } /* Oculto por defecto */
     </style>
 </head>
 <body>
 
-    <h1>Inversor de Texto</h1>
-    <input type="text" id="userInput" placeholder="Escribe algo aquí...">
-    <button onclick="invertirTexto()">Invertir</button>
+    <h2>Inversor en Tiempo Real</h2>
+    <input type="text" id="userInput" placeholder="Escribe al menos 4 caracteres..." oninput="procesarTexto()">
     
-    <p>Resultado: <strong id="result"></strong></p>
+    <button id="btnInvertir">¡Botón Especial!</button>
+    
+    <p><strong>Resultado:</strong> <span id="result"></span></p>
 
     <script src="script.js"></script>
 </body>
